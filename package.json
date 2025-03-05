@@ -24,6 +24,7 @@
     "@types/node": "^20.5.0",
     "@wessberg/ts-evaluator": "^0.0.29",
     "angular-in-memory-web-api": "^0.16.0",
+    "angular-resizable-element": "^7.0.2",
     "buffer": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
