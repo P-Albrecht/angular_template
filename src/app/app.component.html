@@ -1,18 +1,26 @@
-<div class="main-all">
-  <div *ngFor="let element of this.routeList; index as i" class="list-row">
-    <div>
-      <div *ngFor="let param of element; index as j" class="inline">
-
-        <div *ngIf="param.includes(':')" class="inline">
-          <div class="inline" (click)="navClick(i)">/ </div> <input type="text" id="param_{{i}}_{{j}}" class="param"> <div class="inline" (click)="navClick(i)">{{param}}</div>
-        </div>
-        <div *ngIf="!param.includes(':')" class="inline" (click)="navClick(i)">
-          / {{param}}
-        </div>
-      </div>
-    </div>
+<div class="app-container">
+  <div class="position-relative">
+    <app-sidebar
+      [isSidebarCollapsed]="isSidebarCollapsed"
+      (sidebarToggle)="onSidebarToggle()"
+    >
+    </app-sidebar>
+    <button
+      class="sidebar-toggle-btn"
+      [ngClass]="{ 'sidebar-collapsed': isSidebarCollapsed }"
+      (click)="onSidebarToggle()"
+    >
+      <i [class]="isSidebarCollapsed ? 'fas fa-arrow-right' : 'fas fa-arrow-left'"></i>
+    </button>
   </div>
-  <router-outlet></router-outlet>
+
+  <main class="content" [ngClass]="{ 'content-expanded': isSidebarCollapsed }">
+    <div class="content-inner">
+      
+      <div class="main-all">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </main>
 </div>
-
-

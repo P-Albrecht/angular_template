@@ -9,10 +9,8 @@ import { FlaskapiService } from './flaskapi.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  routeList:string[][] = [
-  ]
-
+  isSidebarCollapsed = true;
+  
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private http: HttpClient, private flaskapiService: FlaskapiService) {
   }
 
@@ -20,24 +18,8 @@ export class AppComponent {
 
   }
 
-  onClickMe() {
-    let t = (<HTMLInputElement>document.getElementById('interaction')).value
-    console.log(t)
-
+  onSidebarToggle() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
-
-  navClick(indexI: number) {                                                                                           
-    let routeNav = ''                                                                                                  
-    for (let e in this.routeList[indexI]) {                                          
-      if (this.routeList[indexI][e].includes(':')){                                                                           
-        routeNav = routeNav + '/' + (<HTMLInputElement>document.getElementById('param_' + indexI + '_' + e)).value;  
-      } else {                                                                                                                
-        routeNav = routeNav + '/' + this.routeList[indexI][e];                                                                
-      }                                                                                                                       
-    }                                                                                                                         
-    this.router.navigate([routeNav]).then(() => {                                                             
-      window.location.reload();                                                                                       
-    });                                                                                                               
-  }     
 }
 

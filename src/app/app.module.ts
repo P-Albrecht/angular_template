@@ -5,13 +5,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FlaskapiService } from "./flaskapi.service";
-import { EnviromentComponent } from './enviroment/enviroment.component';
 import { EnviromentModule } from './enviroment/enviroment.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //EnviromentComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
