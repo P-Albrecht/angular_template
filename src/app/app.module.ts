@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FlaskapiService } from "./flaskapi.service";
 import { EnviromentModule } from './enviroment/enviroment.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -21,7 +20,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     EnviromentModule
   ],
   providers: [
-    FlaskapiService,
   ],
   bootstrap: [AppComponent]
 })

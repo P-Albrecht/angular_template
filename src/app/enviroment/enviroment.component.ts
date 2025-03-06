@@ -21,11 +21,6 @@ export class EnviromentComponent {
     });
   }
 
-  onClickMe() {
-    console.log('...........')
-  }
-
-
   validate(event: ResizeEvent): boolean {
     const MIN_DIMENSIONS_PX: number = 50;
     if (

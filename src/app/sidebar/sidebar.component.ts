@@ -23,7 +23,6 @@ export class SidebarComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
-
   toggleSidebar() {
     this.sidebarToggle.emit();
   }
@@ -37,7 +36,6 @@ export class SidebarComponent {
         routeNav = routeNav + '/' + this.routeList[indexI][e];                                                                
       }                                                                                                                       
     }            
-        
     this.router.navigate([routeNav]).then(() => {                                                             
       window.location.reload();                                                                                       
     });  
